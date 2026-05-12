@@ -284,6 +284,9 @@ namespace osu.Game.Rulesets.Osu.Skinning.Legacy
                             throw new UnsupportedSkinComponentException(lookup);
                     }
 
+                case LegacyComboSplash.LegacyComboSplashComponent:
+                    return new LegacyComboSplash.LegacyComboSplashSide("comboburst");
+
                 default:
                     return base.GetDrawableComponent(lookup);
             }
