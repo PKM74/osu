@@ -88,6 +88,9 @@ namespace osu.Game.Rulesets.Catch.Skinning.Legacy
 
                     return null;
 
+                case LegacyComboSplash.LegacyComboSplashComponent:
+                    return new LegacyComboSplash.LegacyComboSplashSide("comboburst-fruits");
+
                 case CatchSkinComponentLookup catchSkinComponent:
                     switch (catchSkinComponent.Component)
                     {
