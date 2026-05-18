@@ -125,6 +125,9 @@ namespace osu.Game.Rulesets.Mania.Skinning.Legacy
 
                                 foreach (var d in container.OfType<ISerialisableDrawable>())
                                     d.UsesFixedAnchor = true;
+
+                                foreach (var comboSplash in components.OfType<LegacyComboSplash>())
+                                    comboSplash.BurstCondition = combo => combo > 0 && combo % 100 == 0;
                             })
                             {
                                 new LegacyManiaComboCounter(),
@@ -178,6 +181,9 @@ namespace osu.Game.Rulesets.Mania.Skinning.Legacy
 
                         case ManiaSkinComponents.BarLine:
                             return new LegacyBarLine();
+
+                        case LegacyComboSplash.LegacyComboSplashComponent:
+                            return new LegacyComboSplash.ManiaLegacyComboSplashSide("comboburst-mania");
 
                         default:
                             throw new UnsupportedSkinComponentException(lookup);

@@ -17,7 +17,7 @@ namespace osu.Game.Screens.Play.HUD
 {
     public class LegacyComboSplash : Container, ISerialisableDrawable
     {
-        [SettingSource("Side, where bursts will appear")]
+        [SettingSource("Side where the bursts will appear")]
         public Bindable<Side> BurstsSide { get; } = new Bindable<Side>(Side.Random);
          private IBindable<bool> randomOrder = null!;
 
@@ -152,11 +152,6 @@ namespace osu.Game.Screens.Play.HUD
             base.LoadComplete();
             current.BindValueChanged(e => OnNewCombo(e.NewValue));
             BurstsSide.BindValueChanged(e => OnSideChanged(e.NewValue), true);
-
-            // if (Parent is SkinnableTargetComponentsContainer container)
-            // {
-            //     container.ChangeChildDepth(this, 1000);
-            // }
         }
 
         public enum Side
